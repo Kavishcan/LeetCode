@@ -9,7 +9,8 @@ class Solution(object):
                 count += 1
         return count
 
-    # O(m + n)
+    # Time: O(m + n)
+    # Space: O(n)
     def numJewelsInStones2(self, jewels, stones):
         s = set(jewels)
         count = 0
