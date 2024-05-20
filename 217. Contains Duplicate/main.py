@@ -10,7 +10,7 @@ class Solution:
 
         return False
 
-# this is solved using HASHSET big O(n) time complexity
+# this is solved using HASHMAP big O(n) time complexity
 
     def containsDuplicateHashmap(self, nums: list[int]) -> bool:
         h = {}
