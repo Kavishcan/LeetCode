@@ -1,5 +1,7 @@
+from collections import defaultdict
+
 class Solution:
-    def maxNumberOfBalloons(text: str) -> int:
+    def maxNumberOfBalloons2(text: str) -> int:
         h = {}
         for i in text:
             h[i] = h.get(i, 0) + 1
@@ -13,6 +15,19 @@ class Solution:
                 return 0  
         
         return max_balloons
+    
+    def maxNumberOfBalloons(text: str) -> int:
+        counter = defaultdict(int)
+        balloon = "balloon"
+
+        for char in text:
+            if char in balloon:
+                counter[char] += 1
+        
+        if any(char not in counter for char in balloon):
+            return 0
+        else:
+            return(min(counter["b"], counter["a"], counter["l"] // 2, counter["o"] // 2, counter["n"]))
         
     
 
